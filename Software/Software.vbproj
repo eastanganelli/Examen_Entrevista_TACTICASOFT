@@ -73,6 +73,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fClients.Designer.vb">
+      <DependentUpon>fClients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="fClients.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fItems.Designer.vb">
+      <DependentUpon>fItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="fItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSells.Designer.vb">
+      <DependentUpon>fSells.vb</DependentUpon>
+    </Compile>
+    <Compile Include="fSells.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="pruebademoDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
