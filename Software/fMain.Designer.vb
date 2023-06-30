@@ -25,28 +25,28 @@ Partial Class fMain
         Me.components = New System.ComponentModel.Container()
         Me.tcClientProducts = New System.Windows.Forms.TabControl()
         Me.tpClient = New System.Windows.Forms.TabPage()
-        Me.tpProducts = New System.Windows.Forms.TabPage()
-        Me.dsPruebademo = New Software.pruebademoDataSet()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.bsClientes = New System.Windows.Forms.BindingSource(Me.components)
-        Me.taClientes = New Software.pruebademoDataSetTableAdapters.clientesTableAdapter()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bsClientes = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dsPruebademo = New Software.pruebademoDataSet()
+        Me.tpProducts = New System.Windows.Forms.TabPage()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.bsProductos = New System.Windows.Forms.BindingSource(Me.components)
-        Me.taProductos = New Software.pruebademoDataSetTableAdapters.productosTableAdapter()
         Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bsProductos = New System.Windows.Forms.BindingSource(Me.components)
+        Me.taClientes = New Software.pruebademoDataSetTableAdapters.clientesTableAdapter()
+        Me.taProductos = New Software.pruebademoDataSetTableAdapters.productosTableAdapter()
         Me.tcClientProducts.SuspendLayout()
         Me.tpClient.SuspendLayout()
-        Me.tpProducts.SuspendLayout()
-        CType(Me.dsPruebademo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dsPruebademo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpProducts.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bsProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -67,26 +67,10 @@ Partial Class fMain
         Me.tpClient.Location = New System.Drawing.Point(4, 22)
         Me.tpClient.Name = "tpClient"
         Me.tpClient.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpClient.Size = New System.Drawing.Size(792, 424)
+        Me.tpClient.Size = New System.Drawing.Size(792, 400)
         Me.tpClient.TabIndex = 0
         Me.tpClient.Text = "Clientes"
         Me.tpClient.UseVisualStyleBackColor = True
-        '
-        'tpProducts
-        '
-        Me.tpProducts.Controls.Add(Me.DataGridView2)
-        Me.tpProducts.Location = New System.Drawing.Point(4, 22)
-        Me.tpProducts.Name = "tpProducts"
-        Me.tpProducts.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpProducts.Size = New System.Drawing.Size(792, 400)
-        Me.tpProducts.TabIndex = 1
-        Me.tpProducts.Text = "Productos"
-        Me.tpProducts.UseVisualStyleBackColor = True
-        '
-        'dsPruebademo
-        '
-        Me.dsPruebademo.DataSetName = "pruebademoDataSet"
-        Me.dsPruebademo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataGridView1
         '
@@ -97,17 +81,8 @@ Partial Class fMain
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(786, 418)
+        Me.DataGridView1.Size = New System.Drawing.Size(786, 394)
         Me.DataGridView1.TabIndex = 0
-        '
-        'bsClientes
-        '
-        Me.bsClientes.DataMember = "clientes"
-        Me.bsClientes.DataSource = Me.dsPruebademo
-        '
-        'taClientes
-        '
-        Me.taClientes.ClearBeforeFill = True
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -143,6 +118,27 @@ Partial Class fMain
         Me.CorreoDataGridViewTextBoxColumn.Name = "CorreoDataGridViewTextBoxColumn"
         Me.CorreoDataGridViewTextBoxColumn.Width = 63
         '
+        'bsClientes
+        '
+        Me.bsClientes.DataMember = "clientes"
+        Me.bsClientes.DataSource = Me.dsPruebademo
+        '
+        'dsPruebademo
+        '
+        Me.dsPruebademo.DataSetName = "pruebademoDataSet"
+        Me.dsPruebademo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'tpProducts
+        '
+        Me.tpProducts.Controls.Add(Me.DataGridView2)
+        Me.tpProducts.Location = New System.Drawing.Point(4, 22)
+        Me.tpProducts.Name = "tpProducts"
+        Me.tpProducts.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpProducts.Size = New System.Drawing.Size(792, 400)
+        Me.tpProducts.TabIndex = 1
+        Me.tpProducts.Text = "Productos"
+        Me.tpProducts.UseVisualStyleBackColor = True
+        '
         'DataGridView2
         '
         Me.DataGridView2.AutoGenerateColumns = False
@@ -154,15 +150,6 @@ Partial Class fMain
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(786, 394)
         Me.DataGridView2.TabIndex = 0
-        '
-        'bsProductos
-        '
-        Me.bsProductos.DataMember = "productos"
-        Me.bsProductos.DataSource = Me.dsPruebademo
-        '
-        'taProductos
-        '
-        Me.taProductos.ClearBeforeFill = True
         '
         'IDDataGridViewTextBoxColumn1
         '
@@ -189,6 +176,19 @@ Partial Class fMain
         Me.CategoriaDataGridViewTextBoxColumn.HeaderText = "Categoria"
         Me.CategoriaDataGridViewTextBoxColumn.Name = "CategoriaDataGridViewTextBoxColumn"
         '
+        'bsProductos
+        '
+        Me.bsProductos.DataMember = "productos"
+        Me.bsProductos.DataSource = Me.dsPruebademo
+        '
+        'taClientes
+        '
+        Me.taClientes.ClearBeforeFill = True
+        '
+        'taProductos
+        '
+        Me.taProductos.ClearBeforeFill = True
+        '
         'fMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -199,10 +199,10 @@ Partial Class fMain
         Me.Text = "TACTISOFT"
         Me.tcClientProducts.ResumeLayout(False)
         Me.tpClient.ResumeLayout(False)
-        Me.tpProducts.ResumeLayout(False)
-        CType(Me.dsPruebademo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dsPruebademo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpProducts.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bsProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
