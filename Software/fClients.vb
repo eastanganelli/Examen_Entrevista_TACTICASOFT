@@ -21,6 +21,8 @@
     End Sub
 
     Private Sub fClients_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'PruebademoDataSet.ventas' Puede moverla o quitarla según sea necesario.
+        Me.VentasTableAdapter.Fill(Me.PruebademoDataSet.ventas)
         'TODO: esta línea de código carga datos en la tabla 'PruebademoDataSet.clientes' Puede moverla o quitarla según sea necesario.
         Me.ClientesTableAdapter.Fill(Me.PruebademoDataSet.clientes)
 

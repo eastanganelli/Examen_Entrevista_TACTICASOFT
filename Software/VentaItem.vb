@@ -16,7 +16,7 @@ End Class
 
 Public Class VentaItemData
     Private listVentaItems As List(Of VentaItem)
-    Private Sub VentaItemData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub VentaItemData_Load(sender As Object, e As EventArgs)
 
     End Sub
 End Class

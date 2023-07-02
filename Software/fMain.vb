@@ -11,4 +11,9 @@
         Me.TableAdapterManager.UpdateAll(Me.PruebademoDataSet)
 
     End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim clientsFrm As fClients = New fClients()
+        clientsFrm.Show()
+    End Sub
 End Class

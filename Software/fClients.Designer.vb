@@ -41,11 +41,20 @@ Partial Class fClients
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ClientesBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VentasTableAdapter = New Software.pruebademoDataSetTableAdapters.ventasTableAdapter()
+        Me.ClientesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.ClientesListBox = New System.Windows.Forms.ListBox()
         CType(Me.PruebademoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ClientesBindingNavigator.SuspendLayout()
+        CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClientesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PruebademoDataSet
@@ -69,7 +78,7 @@ Partial Class fClients
         Me.TableAdapterManager.productosTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Software.pruebademoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.ventasitemsTableAdapter = Nothing
-        Me.TableAdapterManager.ventasTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Me.VentasTableAdapter
         '
         'ClientesBindingNavigator
         '
@@ -124,14 +133,14 @@ Partial Class fClients
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 15)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
         Me.BindingNavigatorCountItem.Text = "de {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
         '
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -139,7 +148,7 @@ Partial Class fClients
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
         '
         'BindingNavigatorMoveLastItem
@@ -148,13 +157,13 @@ Partial Class fClients
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "Mover último"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorAddNewItem
         '
@@ -171,7 +180,7 @@ Partial Class fClients
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'ClientesBindingNavigatorSaveItem
@@ -179,18 +188,47 @@ Partial Class fClients
         Me.ClientesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.ClientesBindingNavigatorSaveItem.Image = CType(resources.GetObject("ClientesBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.ClientesBindingNavigatorSaveItem.Name = "ClientesBindingNavigatorSaveItem"
-        Me.ClientesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.ClientesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ClientesBindingNavigatorSaveItem.Text = "Guardar datos"
+        '
+        'VentasBindingSource
+        '
+        Me.VentasBindingSource.DataMember = "ventas"
+        Me.VentasBindingSource.DataSource = Me.PruebademoDataSet
+        '
+        'VentasTableAdapter
+        '
+        Me.VentasTableAdapter.ClearBeforeFill = True
+        '
+        'ClientesBindingSource1
+        '
+        Me.ClientesBindingSource1.DataMember = "clientes"
+        Me.ClientesBindingSource1.DataSource = Me.PruebademoDataSet
+        '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 25)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.AutoScroll = True
+        Me.SplitContainer1.Panel1.Controls.Add(Me.ClientesListBox)
+        Me.SplitContainer1.Size = New System.Drawing.Size(800, 425)
+        Me.SplitContainer1.SplitterDistance = 202
+        Me.SplitContainer1.TabIndex = 1
         '
         'ClientesListBox
         '
         Me.ClientesListBox.DataSource = Me.ClientesBindingSource
         Me.ClientesListBox.DisplayMember = "Cliente"
+        Me.ClientesListBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ClientesListBox.FormattingEnabled = True
-        Me.ClientesListBox.Location = New System.Drawing.Point(146, 85)
+        Me.ClientesListBox.Location = New System.Drawing.Point(0, 0)
         Me.ClientesListBox.Name = "ClientesListBox"
-        Me.ClientesListBox.Size = New System.Drawing.Size(300, 212)
-        Me.ClientesListBox.TabIndex = 1
+        Me.ClientesListBox.Size = New System.Drawing.Size(202, 425)
+        Me.ClientesListBox.TabIndex = 0
         Me.ClientesListBox.ValueMember = "ID"
         '
         'fClients
@@ -198,7 +236,7 @@ Partial Class fClients
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ClientesListBox)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.ClientesBindingNavigator)
         Me.Name = "fClients"
         Me.Text = "Clientes"
@@ -207,6 +245,11 @@ Partial Class fClients
         CType(Me.ClientesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ClientesBindingNavigator.ResumeLayout(False)
         Me.ClientesBindingNavigator.PerformLayout()
+        CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -229,5 +272,9 @@ Partial Class fClients
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents ClientesBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents VentasTableAdapter As pruebademoDataSetTableAdapters.ventasTableAdapter
+    Friend WithEvents VentasBindingSource As BindingSource
+    Friend WithEvents ClientesBindingSource1 As BindingSource
+    Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents ClientesListBox As ListBox
 End Class

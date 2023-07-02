@@ -46,6 +46,7 @@ Partial Class fMain
         Me.PName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PCategory = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         CType(Me.PruebademoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +83,7 @@ Partial Class fMain
         Me.ProductosBindingNavigator.BindingSource = Me.ProductosBindingSource
         Me.ProductosBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.ProductosBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.ProductosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ProductosBindingNavigatorSaveItem})
+        Me.ProductosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ProductosBindingNavigatorSaveItem, Me.ToolStripButton1})
         Me.ProductosBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.ProductosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.ProductosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -232,6 +233,15 @@ Partial Class fMain
         Me.PCategory.Name = "PCategory"
         Me.PCategory.Width = 77
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
         'fMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -274,4 +284,5 @@ Partial Class fMain
     Friend WithEvents PName As DataGridViewTextBoxColumn
     Friend WithEvents PPrice As DataGridViewTextBoxColumn
     Friend WithEvents PCategory As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class
