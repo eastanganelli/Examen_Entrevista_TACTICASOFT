@@ -65,8 +65,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -88,42 +92,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db.vb" />
     <Compile Include="fClients.Designer.vb">
       <DependentUpon>fClients.vb</DependentUpon>
     </Compile>
     <Compile Include="fClients.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fItems.Designer.vb">
-      <DependentUpon>fItems.vb</DependentUpon>
+    <Compile Include="fMain.Designer.vb">
+      <DependentUpon>fMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="fItems.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fSells.Designer.vb">
-      <DependentUpon>fSells.vb</DependentUpon>
-    </Compile>
-    <Compile Include="fSells.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="pruebademoDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>pruebademoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="VentaItem.vb" />
-    <Compile Include="Cliente.vb" />
     <Compile Include="fMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMain.Designer.vb">
-      <DependentUpon>fMain.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SellItem.vb" />
+    <Compile Include="Client.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -135,8 +123,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Producto.vb" />
-    <Compile Include="Venta.vb" />
+    <Compile Include="Product.vb" />
+    <Compile Include="Sell.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="fClients.resx">
@@ -163,17 +151,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="pruebademoDataSet.xsc">
-      <DependentUpon>pruebademoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="pruebademoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>pruebademoDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="pruebademoDataSet.xss">
-      <DependentUpon>pruebademoDataSet.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

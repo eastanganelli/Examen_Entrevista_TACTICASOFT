@@ -24,10 +24,7 @@ Partial Class fClients
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(fClients))
-        Me.PruebademoDataSet = New Software.pruebademoDataSet()
         Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClientesTableAdapter = New Software.pruebademoDataSetTableAdapters.clientesTableAdapter()
-        Me.TableAdapterManager = New Software.pruebademoDataSetTableAdapters.TableAdapterManager()
         Me.ClientesBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
@@ -42,11 +39,9 @@ Partial Class fClients
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ClientesBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VentasTableAdapter = New Software.pruebademoDataSetTableAdapters.ventasTableAdapter()
         Me.ClientesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.ClientesListBox = New System.Windows.Forms.ListBox()
-        CType(Me.PruebademoDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ClientesBindingNavigator.SuspendLayout()
@@ -57,28 +52,9 @@ Partial Class fClients
         Me.SplitContainer1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'PruebademoDataSet
-        '
-        Me.PruebademoDataSet.DataSetName = "pruebademoDataSet"
-        Me.PruebademoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ClientesBindingSource
         '
         Me.ClientesBindingSource.DataMember = "clientes"
-        Me.ClientesBindingSource.DataSource = Me.PruebademoDataSet
-        '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Me.ClientesTableAdapter
-        Me.TableAdapterManager.productosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Software.pruebademoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.ventasitemsTableAdapter = Nothing
-        Me.TableAdapterManager.ventasTableAdapter = Me.VentasTableAdapter
         '
         'ClientesBindingNavigator
         '
@@ -191,20 +167,6 @@ Partial Class fClients
         Me.ClientesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ClientesBindingNavigatorSaveItem.Text = "Guardar datos"
         '
-        'VentasBindingSource
-        '
-        Me.VentasBindingSource.DataMember = "ventas"
-        Me.VentasBindingSource.DataSource = Me.PruebademoDataSet
-        '
-        'VentasTableAdapter
-        '
-        Me.VentasTableAdapter.ClearBeforeFill = True
-        '
-        'ClientesBindingSource1
-        '
-        Me.ClientesBindingSource1.DataMember = "clientes"
-        Me.ClientesBindingSource1.DataSource = Me.PruebademoDataSet
-        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -240,7 +202,6 @@ Partial Class fClients
         Me.Controls.Add(Me.ClientesBindingNavigator)
         Me.Name = "fClients"
         Me.Text = "Clientes"
-        CType(Me.PruebademoDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ClientesBindingNavigator.ResumeLayout(False)
@@ -255,10 +216,7 @@ Partial Class fClients
 
     End Sub
 
-    Friend WithEvents PruebademoDataSet As pruebademoDataSet
     Friend WithEvents ClientesBindingSource As BindingSource
-    Friend WithEvents ClientesTableAdapter As pruebademoDataSetTableAdapters.clientesTableAdapter
-    Friend WithEvents TableAdapterManager As pruebademoDataSetTableAdapters.TableAdapterManager
     Friend WithEvents ClientesBindingNavigator As BindingNavigator
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
@@ -272,7 +230,6 @@ Partial Class fClients
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents ClientesBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents VentasTableAdapter As pruebademoDataSetTableAdapters.ventasTableAdapter
     Friend WithEvents VentasBindingSource As BindingSource
     Friend WithEvents ClientesBindingSource1 As BindingSource
     Friend WithEvents SplitContainer1 As SplitContainer
