@@ -31,6 +31,7 @@ Partial Class formClients
         Me.txtboxSearch = New System.Windows.Forms.TextBox()
         Me.btnFind = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnSelect = New System.Windows.Forms.Button()
         CType(Me.gridClients, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,6 +39,8 @@ Partial Class formClients
         '
         Me.gridClients.AllowUserToAddRows = False
         Me.gridClients.AllowUserToDeleteRows = False
+        Me.gridClients.AllowUserToResizeColumns = False
+        Me.gridClients.AllowUserToResizeRows = False
         Me.gridClients.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -109,11 +112,24 @@ Partial Class formClients
         Me.btnAdd.Text = "➕"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
+        'btnSelect
+        '
+        Me.btnSelect.AutoSize = True
+        Me.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelect.Location = New System.Drawing.Point(785, 4)
+        Me.btnSelect.Name = "btnSelect"
+        Me.btnSelect.Size = New System.Drawing.Size(75, 25)
+        Me.btnSelect.TabIndex = 7
+        Me.btnSelect.Text = "Seleccionar"
+        Me.btnSelect.UseVisualStyleBackColor = True
+        Me.btnSelect.Visible = False
+        '
         'formClients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(872, 461)
+        Me.Controls.Add(Me.btnSelect)
         Me.Controls.Add(Me.txtboxSearch)
         Me.Controls.Add(Me.btnFind)
         Me.Controls.Add(Me.btnAdd)
@@ -136,4 +152,5 @@ Partial Class formClients
     Friend WithEvents txtboxSearch As TextBox
     Friend WithEvents btnFind As Button
     Friend WithEvents btnAdd As Button
+    Friend WithEvents btnSelect As Button
 End Class

@@ -17,13 +17,19 @@
                 Me._Client = New cClient(reader(1))
                 Me._Date = Date.Parse(reader(2))
                 Me._Total = Double.Parse(reader(3))
-                Me._Items = 
+                'Me._Items = 
             End While
         Catch ex As Exception
             MessageBox.Show("Error while connecting to SQL Server." & ex.Message)
         Finally
             myDBconnection.Close()
         End Try
+    End Sub
+    Public Sub New(_date As DateTime)
+        Me._ID = 0
+        Me._Date = _date
+        Me._Total = 0
+        Me._Items = New List(Of cSellItem)
     End Sub
     Public Sub New(_ID As Int32, _Date As Date, _Total As Integer, _Client As cClient, _Items As List(Of cSellItem))
         Me._ID = _ID
@@ -42,7 +48,6 @@
         For Each _Item As cSellItem In _Items
             Me._Total += _Item._TotalPrice
         Next
-
     End Sub
     Public Sub CreateSell()
         Dim myDBconnection As New SqlClient.SqlConnection(My.Settings.pruebademoConnection)

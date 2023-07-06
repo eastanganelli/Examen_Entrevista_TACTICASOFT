@@ -27,13 +27,6 @@
             myDBconnection.Close()
         End Try
     End Sub
-    Public Sub New(_IDSell As Int32, _IDProduct As Int32, _UnitPrice As Integer, _Count As Integer, _TotalPrice As Integer)
-        Me._IDSell = _IDSell
-        Me._Product = New cProduct(_IDProduct)
-        Me._UnitPrice = _UnitPrice
-        Me._Count = _Count
-        Me._TotalPrice = _TotalPrice
-    End Sub
     Public Sub New(_ID As Int32, _IDSell As Int32, _Product As cProduct, _UnitPrice As Integer, _Count As Integer, _TotalPrice As Integer)
         Me._ID = _ID
         Me._IDSell = _IDSell

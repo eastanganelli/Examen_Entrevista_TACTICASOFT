@@ -43,6 +43,8 @@ Partial Class formSells
         '
         Me.gridSells.AllowUserToAddRows = False
         Me.gridSells.AllowUserToDeleteRows = False
+        Me.gridSells.AllowUserToResizeColumns = False
+        Me.gridSells.AllowUserToResizeRows = False
         Me.gridSells.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

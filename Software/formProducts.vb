@@ -1,13 +1,14 @@
 ﻿Public Class formProducts
-    Private _SelectMode As Boolean
-    Public Sub New(ByVal mode_ As Boolean)
-        If mode_ Then
-            Me.gridProducts.Columns(5).Visible = False
-            Me.gridProducts.EditMode = False
-            Me.gridProducts.ReadOnly = True
-            Me.btnAdd.Visible = False
-        End If
+    Public Property selectedProduct As cProduct
+    Public Sub New(ByVal modal_ As Boolean)
         InitializeComponent()
+        If modal_ Then
+            Me.gridProducts.EditMode = False
+            Me.gridProducts.Columns(4).Visible = False
+            Me.btnAdd.Visible = False
+            Me.gridProducts.ReadOnly = True
+            Me.btnSelect.Visible = True
+        End If
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -43,5 +44,15 @@
         Dim _category As String = Me.gridProducts.Rows(e.RowIndex).Cells(3).Value
         Dim auxClient As New cProduct(_id, _name, Double.Parse(_price), _category)
         auxClient.Update()
+    End Sub
+    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+        If Me.gridProducts.SelectedRows.Count = 1 Then
+            For Each Row In Me.gridProducts.SelectedRows
+                Me.selectedProduct = New cProduct(Int32.Parse(Row.Cells(0).Value), Row.Cells(1).Value, Double.Parse(Row.Cells(2).Value), Row.Cells(3).Value)
+            Next
+            Me.DialogResult = Windows.Forms.DialogResult.OK
+        Else
+            MsgBox("Tiene que seleccionar un producto", MsgBoxStyle.Information, "Producto")
+        End If
     End Sub
 End Class

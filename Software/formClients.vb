@@ -1,10 +1,13 @@
 ﻿Public Class formClients
+    Public Property selectedClient As cClient
     Public Sub New(ByVal modal_ As Boolean)
         InitializeComponent()
         If modal_ Then
             Me.gridClients.EditMode = False
             Me.gridClients.Columns(4).Visible = False
             Me.btnAdd.Visible = False
+            Me.gridClients.ReadOnly = True
+            Me.btnSelect.Visible = True
         End If
     End Sub
     Private Sub formClients_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -48,5 +51,15 @@
         Dim _mail As String = Me.gridClients.Rows(e.RowIndex).Cells(3).Value
         Dim auxClient As New cClient(_id, _client, _phone, _mail)
         auxClient.Update()
+    End Sub
+    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+        If Me.gridClients.SelectedRows.Count = 1 Then
+            For Each Row In Me.gridClients.SelectedRows
+                Me.selectedClient = New cClient(Int32.Parse(Row.Cells(0).Value), Row.Cells(1).Value, Row.Cells(2).Value, Row.Cells(3).Value)
+            Next
+            Me.DialogResult = Windows.Forms.DialogResult.OK
+        Else
+            MsgBox("Tiene que seleccionar un cliente", MsgBoxStyle.Information, "Cliente")
+        End If
     End Sub
 End Class
