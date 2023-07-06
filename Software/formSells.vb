@@ -1,11 +1,11 @@
 ﻿Public Class formSells
     Private Sub fClients_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim _clients As New List(Of cClient)
+        cSell.GetData(Me.gridSells)
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim diag_ As New formProducts
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Dim diag_ As New formProducts(True)
         If diag_.ShowDialog() Then
             '...
         End If

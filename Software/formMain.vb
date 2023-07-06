@@ -5,9 +5,9 @@ Public Class formMain
 
     End Sub
     Private Sub formMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        For Each f As Form In Application.OpenForms
-            f.Close()
-        Next
+        'For Each f As Form In Application.OpenForms
+        '    f.Close()
+        'Next
     End Sub
     Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
         For Each f As Form In Application.OpenForms
@@ -17,7 +17,7 @@ Public Class formMain
             End If
         Next
 
-        Dim _child As New formProducts
+        Dim _child As New formProducts(False)
         _child.MdiParent = Me
         _child.Show()
     End Sub
@@ -29,7 +29,7 @@ Public Class formMain
             End If
         Next
 
-        Dim _child As New formClients
+        Dim _child As New formClients(False)
         _child.MdiParent = Me
         _child.Show()
     End Sub

@@ -28,27 +28,25 @@ Partial Class formClients
         Me.Phone = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me._delete = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtsearchClient = New System.Windows.Forms.ToolStripTextBox()
-        Me.btnSearchClient = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.addClient = New System.Windows.Forms.ToolStripMenuItem()
+        Me.txtboxSearch = New System.Windows.Forms.TextBox()
+        Me.btnFind = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         CType(Me.gridClients, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gridClients
         '
         Me.gridClients.AllowUserToAddRows = False
         Me.gridClients.AllowUserToDeleteRows = False
+        Me.gridClients.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gridClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.gridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gridClients.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Client, Me.Phone, Me.Email, Me._delete})
-        Me.gridClients.Location = New System.Drawing.Point(0, 27)
+        Me.gridClients.Location = New System.Drawing.Point(12, 34)
         Me.gridClients.Name = "gridClients"
-        Me.gridClients.Size = New System.Drawing.Size(800, 423)
+        Me.gridClients.Size = New System.Drawing.Size(848, 415)
         Me.gridClients.TabIndex = 0
         '
         'ID
@@ -77,71 +75,53 @@ Partial Class formClients
         '
         '_delete
         '
-        Me._delete.HeaderText = "Eliminar"
+        Me._delete.HeaderText = ""
         Me._delete.Name = "_delete"
-        Me._delete.Text = "Eliminar"
-        Me._delete.Width = 49
+        Me._delete.Text = ""
+        Me._delete.Width = 5
         '
-        'MenuStrip1
+        'txtboxSearch
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.ToolStripMenuItem2, Me.addClient, Me.ToolStripMenuItem1, Me.txtsearchClient, Me.btnSearchClient})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 27)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.txtboxSearch.Location = New System.Drawing.Point(64, 7)
+        Me.txtboxSearch.Name = "txtboxSearch"
+        Me.txtboxSearch.Size = New System.Drawing.Size(169, 20)
+        Me.txtboxSearch.TabIndex = 6
         '
-        'SalirToolStripMenuItem
+        'btnFind
         '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 23)
-        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.btnFind.AutoSize = True
+        Me.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFind.Location = New System.Drawing.Point(239, 4)
+        Me.btnFind.Name = "btnFind"
+        Me.btnFind.Size = New System.Drawing.Size(31, 25)
+        Me.btnFind.TabIndex = 5
+        Me.btnFind.Text = "🔍"
+        Me.btnFind.UseVisualStyleBackColor = True
         '
-        'txtsearchClient
+        'btnAdd
         '
-        Me.txtsearchClient.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtsearchClient.Name = "txtsearchClient"
-        Me.txtsearchClient.Size = New System.Drawing.Size(200, 23)
-        '
-        'btnSearchClient
-        '
-        Me.btnSearchClient.Name = "btnSearchClient"
-        Me.btnSearchClient.Size = New System.Drawing.Size(54, 23)
-        Me.btnSearchClient.Text = "Buscar"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Enabled = False
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(22, 23)
-        Me.ToolStripMenuItem1.Text = "|"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Enabled = False
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(22, 23)
-        Me.ToolStripMenuItem2.Text = "|"
-        '
-        'addClient
-        '
-        Me.addClient.Name = "addClient"
-        Me.addClient.Size = New System.Drawing.Size(40, 23)
-        Me.addClient.Text = "Alta"
+        Me.btnAdd.AutoSize = True
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Location = New System.Drawing.Point(12, 4)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(31, 25)
+        Me.btnAdd.TabIndex = 4
+        Me.btnAdd.Text = "➕"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'formClients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(872, 461)
+        Me.Controls.Add(Me.txtboxSearch)
+        Me.Controls.Add(Me.btnFind)
+        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.gridClients)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MinimumSize = New System.Drawing.Size(888, 500)
         Me.Name = "formClients"
         Me.Text = "Clientes"
         CType(Me.gridClients, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -153,11 +133,7 @@ Partial Class formClients
     Friend WithEvents Phone As DataGridViewTextBoxColumn
     Friend WithEvents Email As DataGridViewTextBoxColumn
     Friend WithEvents _delete As DataGridViewButtonColumn
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents txtsearchClient As ToolStripTextBox
-    Friend WithEvents btnSearchClient As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents addClient As ToolStripMenuItem
+    Friend WithEvents txtboxSearch As TextBox
+    Friend WithEvents btnFind As Button
+    Friend WithEvents btnAdd As Button
 End Class

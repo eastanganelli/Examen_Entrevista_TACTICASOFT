@@ -117,6 +117,18 @@
     <Compile Include="formProducts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modalClient.Designer.vb">
+      <DependentUpon>modalClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="modalClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modalProduct.Designer.vb">
+      <DependentUpon>modalProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="modalProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="modalSell.Designer.vb">
       <DependentUpon>modalSell.vb</DependentUpon>
     </Compile>
@@ -148,11 +160,23 @@
     <EmbeddedResource Include="formClients.resx">
       <DependentUpon>formClients.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formProducts.resx">
+      <DependentUpon>formProducts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formSells.resx">
       <DependentUpon>formSells.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modalClient.resx">
+      <DependentUpon>modalClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modalProduct.resx">
+      <DependentUpon>modalProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modalSell.resx">
+      <DependentUpon>modalSell.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -191,11 +215,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pruebademo.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="pruebademo_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>pruebademo.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
